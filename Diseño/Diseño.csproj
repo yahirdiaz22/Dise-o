@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="567_3970_set_preset_f9406859-f5b0-46a5-84c2-94cbf3aed118.webp" />
+    <None Remove="anadir-al-carrito.png" />
+    <None Remove="calendario %281%29.png" />
+    <None Remove="calendario.png" />
+    <None Remove="candado.png" />
+    <None Remove="carro-de-la-compra.png" />
+    <None Remove="cerrar-con-llave.png" />
+    <None Remove="cerrar-sesion.png" />
+    <None Remove="correo-electronico.png" />
+    <None Remove="identificacion-de-estudiante.png" />
+    <None Remove="inicio-de-sesion-de-usuario.png" />
+    <None Remove="pago-hipotecario.png" />
+    <None Remove="Paquete-3Playeras-basicas-cuello-V_3A_831bebe9-46f9-4557-b293-ef080a771e2f.jpg" />
+    <None Remove="pdf.png" />
+    <None Remove="perfil-del-usuario.png" />
+    <None Remove="tarjeta-de-credito %281%29.png" />
+    <None Remove="tarjeta-de-credito.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="3.1.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="imagenes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="567_3970_set_preset_f9406859-f5b0-46a5-84c2-94cbf3aed118.webp" />
+    <Resource Include="anadir-al-carrito.png" />
+    <Resource Include="calendario (1).png" />
+    <Resource Include="calendario.png" />
+    <Resource Include="candado.png" />
+    <Resource Include="carro-de-la-compra.png" />
+    <Resource Include="cerrar-con-llave.png" />
+    <Resource Include="cerrar-sesion.png" />
+    <Resource Include="correo-electronico.png" />
+    <Resource Include="identificacion-de-estudiante.png" />
+    <Resource Include="inicio-de-sesion-de-usuario.png" />
+    <Resource Include="pago-hipotecario.png" />
+    <Resource Include="Paquete-3Playeras-basicas-cuello-V_3A_831bebe9-46f9-4557-b293-ef080a771e2f.jpg" />
+    <Resource Include="pdf.png" />
+    <Resource Include="perfil-del-usuario.png" />
+    <Resource Include="tarjeta-de-credito (1).png" />
+    <Resource Include="tarjeta-de-credito.png" />
+  </ItemGroup>
+
+</Project>

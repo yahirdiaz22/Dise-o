@@ -1,0 +1,44 @@
+﻿<Window x:Class="Diseño.ProximoPago"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Próximo Pago" Height="450" Width="800">
+    <Grid Margin="20">
+        <TextBlock Text="Próximo Pago" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10" Foreground="MidnightBlue"/>
+
+        <StackPanel Margin="0,40,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                <TextBlock Text="Monto a pagar:" FontSize="16" Width="120" VerticalAlignment="Center" Foreground="SteelBlue"/>
+                <TextBlock Text="$1200.00" FontSize="16" FontWeight="Bold" Foreground="DodgerBlue" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,10">
+                <TextBlock Text="Fecha de vencimiento:" FontSize="16" Width="159" VerticalAlignment="Center" Foreground="SteelBlue"/>
+                <TextBlock Text="15/11/2024" FontSize="16" FontWeight="Bold" Foreground="DodgerBlue" Width="132"/>
+            </StackPanel>
+
+            <TextBlock Text="Resumen de la compra:" FontSize="16" FontWeight="Bold" Margin="0,20,0,10" Foreground="RoyalBlue"/>
+            <ListBox Height="150" Background="LightSkyBlue" BorderBrush="DodgerBlue" BorderThickness="1">
+                <ListBoxItem>
+                    <StackPanel>
+                        <TextBlock Text="Producto: Televisor LED" FontSize="14" Foreground="MidnightBlue"/>
+                        <TextBlock Text="Cantidad: 1" FontSize="14" Foreground="MidnightBlue"/>
+                        <TextBlock Text="Precio: $1000.00" FontSize="14" Foreground="MidnightBlue"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel>
+                        <TextBlock Text="Producto: Estuche de Carga" FontSize="14" Foreground="MidnightBlue"/>
+                        <TextBlock Text="Cantidad: 1" FontSize="14" Foreground="MidnightBlue"/>
+                        <TextBlock Text="Precio: $200.00" FontSize="14" Foreground="MidnightBlue"/>
+                    </StackPanel>
+                </ListBoxItem>
+            </ListBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                <Button Content="Pagar ahora" Width="150" Height="40" Background="RoyalBlue" Foreground="White" FontSize="16" Margin="10" Click="Button_Click"/>
+                <Button Content="Ver detalles" Width="150" Height="40" Background="SteelBlue" Foreground="White" FontSize="16" Margin="10"/>
+                <Button Content="Cancelar" Width="150" Height="40" Background="LightSteelBlue" Foreground="White" FontSize="16" Margin="10" Click="Button_Click_1"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

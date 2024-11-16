@@ -1,0 +1,64 @@
+﻿<Window x:Class="Diseño.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Inicio de Sesión" WindowStartupLocation="CenterScreen"
+        Background="#FF1E88E5" ResizeMode="CanResizeWithGrip" MinWidth="400" MinHeight="300">
+
+    <Grid Background="#FF1459E3" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Border Margin="20" BorderBrush="#FFD2A34A" BorderThickness="1" CornerRadius="10"
+                HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,20">
+                    <Image Source="/inicio-de-sesion-de-usuario.png" Width="30" Height="30" Margin="5" VerticalAlignment="Center" />
+
+                    <TextBlock Text="Iniciar Sesión" FontSize="24" FontWeight="Bold" 
+               Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="1" Margin="0,0,0,10" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <Image Source="/perfil-del-usuario.png" Width="30" Height="30" Margin="5" VerticalAlignment="Center" />
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Nombre de Usuario" FontWeight="SemiBold" Foreground="White" />
+                        <TextBox x:Name="UsernameTextBox" Height="30" Background="White" 
+                                 BorderBrush="#FF1976D2" HorizontalAlignment="Stretch" Width="249" />
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Margin="0,0,0,10" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                    <Image Source="/candado.png" Width="30" Height="30" Margin="5" VerticalAlignment="Center" />
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch">
+                        <TextBlock Text="Contraseña" FontWeight="SemiBold" Foreground="White" />
+                        <PasswordBox x:Name="PasswordBox" Height="30" Background="White" 
+                                     BorderBrush="#FF1976D2" HorizontalAlignment="Stretch" Width="249" />
+                    </StackPanel>
+                </StackPanel>
+
+                <TextBlock Grid.Row="3" HorizontalAlignment="Center" Margin="0,10,0,10" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown">
+                    <Run Text="¿No tienes cuenta? " Foreground="White"/>
+                    <Run Text="Regístrate aquí" Foreground="Black" TextDecorations="Underline" Cursor="Hand"
+                         MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
+                </TextBlock>
+
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                    <Button x:Name="btnInicioSesion" Content="Iniciar Sesión" Width="150" Margin="5" Height="40"
+                            Background="DeepSkyBlue" Foreground="White" Click="LoginButton_Click" BorderBrush="#FF873434"/>
+
+                    <Button x:Name="btnCancelar" Content="Cancelar" Width="150" Margin="5" Height="40"
+                            Background="AntiqueWhite" Foreground="#FF1E88E5" Click="CancelButton_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

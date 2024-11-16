@@ -1,0 +1,30 @@
+﻿<Window x:Class="Diseño.ConsultaCompras"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diseño"
+        mc:Ignorable="d"
+        Title="ConsultaCompras" Height="450" Width="800"
+        Background="LightSkyBlue"> 
+    
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock FontSize="20" FontWeight="Bold" Margin="0,0,0,20" Text="Consulta de Compras" 
+                       HorizontalAlignment="Center" Foreground="White"/>
+
+            <DataGrid Name="ComprasDataGrid" AutoGenerateColumns="False" Margin="0,10" Height="250" IsReadOnly="True" 
+          Background="White" Foreground="Black">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*" />
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}" Width="*" />
+                    <DataGridTextColumn Header="Precio" Binding="{Binding Precio}" Width="*" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Button Content="Volver" Width="100" Click="VolverButton_Click" Background="RoyalBlue" Foreground="White"/> <!-- Botón azul -->
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
