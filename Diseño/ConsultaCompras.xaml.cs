@@ -11,6 +11,7 @@ namespace Diseño
         // Constructor que recibe la lista del carrito
         public ConsultaCompras(List<Carrito> carrito)
         {
+            this.WindowState= WindowState.Maximized;
             InitializeComponent();
             this.carrito = carrito;
             CargarProductos();

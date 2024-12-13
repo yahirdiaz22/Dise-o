@@ -5,47 +5,39 @@ namespace Diseño
 {
     public partial class ConsultarCredito : Window
     {
-        // Suponiendo que tienes un crédito inicial de $3000
-        private const decimal creditoInicial = 3000.00m;
-        private decimal saldoPendiente = 3000.00m; // Saldo inicial igual al crédito
-        private DateTime fechaVencimiento = DateTime.Now.AddMonths(1); // Vencimiento en un mes
-        private decimal montoTotal = 3000.00m; // Se asume que el monto total es igual al crédito inicial al principio
-
         public ConsultarCredito()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
+
+            // Cargar directamente los datos del cliente
+            CargarDatosCliente();
         }
 
-        private void ConsultarCredito_Click(object sender, RoutedEventArgs e)
+        private void CargarDatosCliente()
         {
-            string nombreCliente = txtNombreCliente.Text.Trim();
+            // Simulación de datos del cliente
+            string cliente = "Yahir Diaz";
+            double creditoInicial = 3000.00;
+            double saldoPendiente = 1000.00;
+            DateTime fechaVencimiento = new DateTime(2024, 11, 10);
+            double montoTotal = 4000.00;
 
-            if (string.IsNullOrEmpty(nombreCliente))
-            {
-                txtError.Visibility = Visibility.Visible;
-                txtError.Text = "Por favor, ingrese el nombre del cliente.";
-                stackPanelDetalles.Visibility = Visibility.Collapsed;
-            }
-            else
-            {
-                // Ocultar mensaje de error si el nombre es válido
-                txtError.Visibility = Visibility.Collapsed;
+            // Asignar los datos a los TextBlocks
+            txtResultado.Text = $"Información de crédito para el cliente: {cliente}";
+            txtCreditoInicial.Text = $"Crédito Inicial: ${creditoInicial:F2}";
+            txtSaldoPendiente.Text = $"Saldo Pendiente: ${saldoPendiente:F2}";
+            txtFechaVencimiento.Text = $"Fecha de Vencimiento: {fechaVencimiento:dd/MM/yyyy}";
+            txtMontoTotal.Text = $"Monto Total: ${montoTotal:F2}";
 
-                // Mostrar los detalles del crédito
-                txtCreditoInicial.Text = $"Crédito Inicial: ${creditoInicial:0.00}";
-                txtSaldoPendiente.Text = $"Saldo Pendiente: ${saldoPendiente:0.00}";
-                txtFechaVencimiento.Text = $"Fecha de Vencimiento: {fechaVencimiento:dd/MM/yyyy}";
-                txtMontoTotal.Text = $"Monto Total: ${montoTotal:0.00}";
-
-                // Hacer visible el stack panel que contiene los detalles del crédito
-                stackPanelDetalles.Visibility = Visibility.Visible;
-            }
+            // Asegurarse de que los controles sean visibles
+            stackPanelDetalles.Visibility = Visibility.Visible;
         }
 
         private void RegresarMenu_Click(object sender, RoutedEventArgs e)
         {
+            // Cerrar la ventana actual y regresar al menú principal
             this.Close();
-
             Menu menu = new Menu();
             menu.Show();
         }

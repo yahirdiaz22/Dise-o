@@ -21,6 +21,8 @@ namespace Diseño
     {
         public ProximoPago()
         {
+            this.WindowState = WindowState.Maximized;
+
             InitializeComponent();
         }
 

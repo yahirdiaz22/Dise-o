@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>bubble_chat_message_contact_icon_264233 (1).ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,6 +27,10 @@
     <None Remove="perfil-del-usuario.png" />
     <None Remove="tarjeta-de-credito %281%29.png" />
     <None Remove="tarjeta-de-credito.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bubble_chat_message_contact_icon_264233 (1).ico" />
   </ItemGroup>
 
   <ItemGroup>

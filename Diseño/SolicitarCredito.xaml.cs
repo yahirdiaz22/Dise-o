@@ -22,6 +22,7 @@ namespace Diseño
     {
         public SolicitarCredito()
         {
+            this.WindowState= WindowState.Maximized;
             InitializeComponent();
         }
 

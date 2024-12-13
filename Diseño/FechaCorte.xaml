@@ -1,0 +1,65 @@
+﻿<Window x:Class="Diseño.FechaCorte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fecha de Corte" Height="552" Width="893">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Título centrado -->
+        <TextBlock Text="Información de la Fecha de Corte" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   Margin="0,10,0,20"
+                   Foreground="MidnightBlue" />
+
+        <!-- Contenido centrado -->
+        <StackPanel Grid.Row="1" Margin="20" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+            <!-- Explicación -->
+            <TextBlock Text="La fecha de corte marca el cierre del ciclo de facturación y genera el estado de cuenta." 
+                       FontSize="16" 
+                       TextWrapping="Wrap" 
+                       Margin="0,10" 
+                       Foreground="SteelBlue"/>
+            <TextBlock Text="La fecha límite de pago indica hasta cuándo puedes pagar sin generar intereses." 
+                       FontSize="16" 
+                       TextWrapping="Wrap" 
+                       Margin="0,10" 
+                       Foreground="SteelBlue"/>
+            <TextBlock Text="Mantente atento a estas fechas para evitar cargos adicionales." 
+                       FontSize="16" 
+                       TextWrapping="Wrap" 
+                       Margin="0,10" 
+                       Foreground="SteelBlue"/>
+
+            <!-- Detalles de la fecha de corte -->
+            <StackPanel Margin="0,20,0,0">
+                <TextBlock Text="Fecha de Corte:" FontSize="16" FontWeight="Bold" Foreground="DarkBlue"/>
+                <TextBlock Name="txtFechaCorte" Text="15 de cada mes" FontSize="16" Margin="0,5" Foreground="Black"/>
+
+                <TextBlock Text="Fecha Límite de Pago:" FontSize="16" FontWeight="Bold" Foreground="DarkBlue" Margin="0,15,0,0"/>
+                <TextBlock Name="txtFechaLimitePago" Text="5 del mes siguiente" FontSize="16" Margin="0,5" Foreground="Black"/>
+
+                <TextBlock Text="Días restantes para pagar:" FontSize="16" FontWeight="Bold" Foreground="DarkBlue" Margin="0,15,0,0"/>
+                <TextBlock Name="txtDiasRestantes" Text="20 días" FontSize="16" Margin="0,5" Foreground="Black"/>
+            </StackPanel>
+
+            <!-- Botón para regresar al menú -->
+            <Button Content="Regresar al Menú" 
+                    Width="180" 
+                    Height="40" 
+                    Background="RoyalBlue" 
+                    Foreground="White" 
+                    FontSize="16" 
+                    HorizontalAlignment="Center" 
+                    Margin="0,20" 
+                    Click="RegresarMenu_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

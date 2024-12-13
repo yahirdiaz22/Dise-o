@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 
 namespace Diseño
@@ -12,9 +11,11 @@ namespace Diseño
 
         public PagosVencidos()
         {
+            this.WindowState = WindowState.Maximized;
+
             InitializeComponent();
 
-            // Inicializamos la lista de pagos vencidos, pero no la asignamos aún al DataGrid
+            // Inicializamos la lista de pagos vencidos
             PagosVencidosList = new List<PagoVencido>
             {
                 new PagoVencido { Cliente = "Yahir Diaz", Monto = 1500.00, FechaVencimiento = new DateTime(2024, 11, 10), SaldoPendiente = 500.00 },
@@ -22,50 +23,38 @@ namespace Diseño
                 new PagoVencido { Cliente = "Yahir Diaz", Monto = 2000.00, FechaVencimiento = new DateTime(2024, 09, 20), SaldoPendiente = 1000.00 }
             };
 
-            // No se asigna nada aún al DataGrid
-            dgPagosVencidos.ItemsSource = null;
+            // Asignar la lista completa de pagos vencidos al DataGrid
+            dgPagosVencidos.ItemsSource = PagosVencidosList;
         }
 
-        // Método que se ejecuta cuando el usuario hace clic en "Consultar"
-        private void ConsultarPagos_Click(object sender, RoutedEventArgs e)
+        // Método para manejar el clic en "Pagar"
+        private void Pagar_Click(object sender, RoutedEventArgs e)
         {
-            // Obtener el nombre del cliente del campo de texto
-            string cliente = txtNombreCliente.Text.Trim();
+            // Obtener el pago vinculado al botón usando la propiedad Tag
+            var button = sender as FrameworkElement;
+            var pago = button?.DataContext as PagoVencido;
 
-            if (string.IsNullOrEmpty(cliente))
+            if (pago != null)
             {
-                MessageBox.Show("Por favor, ingresa un nombre de cliente.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
-            }
+                // Mostrar un mensaje de confirmación
+                MessageBox.Show($"El pago de {pago.Cliente} por un monto de {pago.SaldoPendiente:C} ha sido realizado.",
+                                "Pago Realizado", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            // Filtrar los pagos vencidos para el cliente ingresado
-            var pagosFiltrados = PagosVencidosList.Where(p => p.Cliente.Contains(cliente, StringComparison.OrdinalIgnoreCase)).ToList();
+                // Eliminar el pago de la lista
+                PagosVencidosList.Remove(pago);
 
-            // Asignar los pagos filtrados al DataGrid
-            if (pagosFiltrados.Any())
-            {
-                dgPagosVencidos.ItemsSource = pagosFiltrados;
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron pagos vencidos para el cliente ingresado.", "Sin resultados", MessageBoxButton.OK, MessageBoxImage.Information);
-                dgPagosVencidos.ItemsSource = null; // Limpiar el DataGrid si no hay resultados
+                // Actualizar la fuente de datos del DataGrid
+                dgPagosVencidos.ItemsSource = null; // Necesario para que se reflejen los cambios
+                dgPagosVencidos.ItemsSource = PagosVencidosList;
             }
         }
 
-        // Método que se ejecuta cuando el usuario hace clic en "Regresar al Menú"
+        // Método para regresar al menú principal
         private void RegresarMenu_Click(object sender, RoutedEventArgs e)
         {
-            // Cerrar la ventana actual y regresar al menú principal
             this.Close();
-        Menu menu = new Menu();
+            Menu menu = new Menu(); // Asumiendo que tienes una ventana llamada Menu
             menu.Show();
-        }
-
-        // Método para manejar el cambio de texto en el TextBox (si es necesario para alguna lógica futura)
-        private void txtNombreCliente_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-        {
-            // Aquí podrías implementar alguna lógica adicional si se desea filtrar automáticamente mientras se escribe
         }
     }
 

@@ -47,7 +47,9 @@ namespace Diseño
 
         private void FechaCorteButton_Click(object sender, RoutedEventArgs e)
         {
-            // Agregar lógica aquí si es necesario
+            FechaCorte fecha = new FechaCorte();
+            fecha.Show();
+            this.Hide();
         }
 
         private void SolicitarAumentoCreditoButton_Click(object sender, RoutedEventArgs e)
